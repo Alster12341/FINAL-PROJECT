@@ -1,40 +1,96 @@
-<!-- HOME PAGE -->
-<section id="home" class="page active">
-  <div class="hero">
-    <h2>The Daily Grind</h2>
-    <p>Freshly roasted beans, brewed with passion.</p>
-  </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Daily Grind | Coffee Shop</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
 
-  <div class="content-wrap">
-    <h3>Our Signature Brews</h3>
-    <div class="menu-grid">
-      <div class="menu-item">
-        <h4>Caramel Macchiato</h4>
-        <p>Espresso with steamed milk and vanilla syrup.</p>
-        <span class="price">$4.50</span>
-      </div>
-      <div class="menu-item">
-        <h4>Nitro Cold Brew</h4>
-        <p>Infused with nitrogen for a creamy, stout-like finish.</p>
-        <span class="price">$5.25</span>
-      </div>
-      <div class="menu-item">
-        <h4>Classic Latte</h4>
-        <p>A double shot of espresso with silky micro-foam.</p>
-        <span class="price">$3.75</span>
-      </div>
+<header class="navbar">
+  <div class="logo">☕ The Daily Grind</div>
+
+  <button class="menu-toggle" id="menuToggle" aria-label="Open Menu">☰</button>
+
+  <nav id="navMenu">
+    <a href="#" class="nav-link active" data-page="home">Home</a>
+    <a href="#" class="nav-link" data-page="about">About</a>
+    <a href="#" class="nav-link" data-page="contact">Contact</a>
+    <button id="themeToggle" class="theme-btn">🌙 Dark Roast</button>
+  </nav>
+</header>
+
+<main>
+  <!-- HOME PAGE -->
+  <section id="home" class="page active">
+    <div class="hero">
+      <h2>Wake Up to Freshness</h2>
+      <p>Artisan coffee brewed daily in the heart of the city.</p>
     </div>
 
-    <section class="faq-section">
-      <h3>Cafe FAQ</h3>
-      <div class="faq-item">
-        <div class="faq-question"><span>Do you have dairy-free milk?</span><span>▼</span></div>
-        <p class="faq-answer">Yes! We offer Oat, Almond, and Soy milk for any drink.</p>
+    <div class="container">
+      <h3 class="section-title">Our Signature Brews</h3>
+      <div class="menu-grid">
+        <div class="menu-item">
+          <h4>Caramel Macchiato</h4>
+          <p>Espresso with steamed milk and vanilla syrup.</p>
+          <span class="price">$4.50</span>
+        </div>
+        <div class="menu-item">
+          <h4>Nitro Cold Brew</h4>
+          <p>Infused with nitrogen for a creamy, stout-like finish.</p>
+          <span class="price">$5.25</span>
+        </div>
+        <div class="menu-item">
+          <h4>Classic Latte</h4>
+          <p>A double shot of espresso with silky micro-foam.</p>
+          <span class="price">$3.75</span>
+        </div>
       </div>
-      <div class="faq-item">
-        <div class="faq-question"><span>Are pets allowed?</span><span>▼</span></div>
-        <p class="faq-answer">Absolutely. We have a pet-friendly outdoor seating area.</p>
+
+      <section class="faq-section">
+        <h3>Cafe FAQ</h3>
+        <div class="faq-item">
+          <div class="faq-question"><span>Do you have dairy-free milk?</span><span>▼</span></div>
+          <p class="faq-answer">Yes! We offer Oat, Almond, and Soy milk for any drink.</p>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question"><span>Are pets allowed?</span><span>▼</span></div>
+          <p class="faq-answer">Absolutely. We have a pet-friendly outdoor seating area.</p>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- ABOUT PAGE -->
+  <section id="about" class="page">
+    <div class="container">
+      <h2>Our Story</h2>
+      <p>Founded in 2026, The Daily Grind started with a simple mission: to bring world-class beans to our local community. We source ethically and roast locally.</p>
+    </div>
+  </section>
+
+  <!-- CONTACT PAGE -->
+  <section id="contact" class="page">
+    <div class="container">
+      <h2>Visit Us</h2>
+      <div class="form-wrapper">
+        <form id="contactForm">
+          <input type="text" id="name" placeholder="Your Name" required />
+          <input type="email" id="email" placeholder="Your Email" required />
+          <textarea placeholder="Your Order or Message" rows="4"></textarea>
+          <button type="submit" class="submit-btn">Send Message</button>
+        </form>
       </div>
-    </section>
-  </div>
-</section>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2026 The Daily Grind Coffee Shop</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
