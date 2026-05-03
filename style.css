@@ -1,0 +1,78 @@
+body {
+  margin: 0;
+  font-family: Arial;
+  transition: 0.3s;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #f3e5d8;
+  padding: 15px;
+  position: sticky;
+  top: 0;
+}
+
+.navbar nav {
+  display: flex;
+}
+
+.navbar a {
+  margin: 0 10px;
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+}
+
+.page {
+  display: none;
+  padding: 20px;
+}
+
+.page.active {
+  display: block;
+}
+
+.faq-item {
+  margin: 15px 0;
+  cursor: pointer;
+}
+
+.faq-item p {
+  display: none;
+}
+
+input, button {
+  display: block;
+  margin: 10px 0;
+  padding: 10px;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+}
+
+.dark-mode {
+  background: #121212;
+  color: white;
+}
+
+.dark-mode .navbar {
+  background: #1e1e1e;
+}
+
+.dark-mode a {
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .navbar {
+    flex-direction: column;
+  }
+
+  .navbar nav {
+    flex-direction: column;
+  }
+}
