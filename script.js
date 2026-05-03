@@ -1,69 +1,58 @@
 document.addEventListener("DOMContentLoaded", () => {
-  // --- ELEMENTS ---
   const themeBtn = document.querySelector("#themeToggle");
-  const menuToggle = document.querySelector("#menuToggle");
-  const navMenu = document.querySelector("#navMenu");
   const navLinks = document.querySelectorAll(".nav-link");
   const pages = document.querySelectorAll(".page");
+  const menuToggle = document.querySelector("#menuToggle");
+  const navMenu = document.querySelector("#navMenu");
 
-  // --- THEME LOGIC ---
-  const currentTheme = localStorage.getItem("theme");
-  if (currentTheme === "dark") {
+  // 1. THEME SWITCHER
+  if (localStorage.getItem("theme") === "dark") {
     document.body.classList.add("dark-mode");
-    themeBtn.textContent = "☀️";
+    themeBtn.textContent = "☀️ Light Roast";
   }
 
   themeBtn.addEventListener("click", () => {
     document.body.classList.toggle("dark-mode");
     const isDark = document.body.classList.contains("dark-mode");
     localStorage.setItem("theme", isDark ? "dark" : "light");
-    themeBtn.textContent = isDark ? "☀️" : "🌙";
+    themeBtn.textContent = isDark ? "☀️ Light Roast" : "🌙 Dark Roast";
   });
 
-  // --- NAVIGATION LOGIC ---
+  // 2. PAGE NAVIGATION
   navLinks.forEach(link => {
     link.addEventListener("click", (e) => {
       e.preventDefault();
       const target = link.dataset.page;
 
-      // Update active link styling
+      // Update UI
       navLinks.forEach(l => l.classList.remove("active"));
       link.classList.add("active");
 
-      // Switch pages
       pages.forEach(p => p.classList.remove("active"));
       document.getElementById(target).classList.add("active");
-
-      // Close mobile menu after clicking
+      
+      // Close mobile menu
       navMenu.classList.remove("open");
     });
   });
 
-  // --- MOBILE MENU TOGGLE ---
+  // 3. FAQ ACCORDION
+  document.querySelectorAll(".faq-item").forEach(item => {
+    item.addEventListener("click", () => {
+      const answer = item.querySelector(".faq-answer");
+      const isVisible = answer.style.display === "block";
+      answer.style.display = isVisible ? "none" : "block";
+    });
+  });
+
+  // 4. MOBILE MENU
   menuToggle.addEventListener("click", () => {
     navMenu.classList.toggle("open");
   });
 
-  // --- FAQ ACCORDION ---
-  // Using a more robust selector to handle clicks anywhere on the question
-  document.querySelectorAll(".faq-question").forEach(q => {
-    q.addEventListener("click", () => {
-      const answer = q.nextElementSibling;
-      const isOpen = answer.style.display === "block";
-      
-      // Close all others first (optional accordion behavior)
-      document.querySelectorAll(".faq-answer").forEach(a => a.style.display = "none");
-      
-      answer.style.display = isOpen ? "none" : "block";
-    });
-  });
-
-  // --- FORM VALIDATION ---
-  const form = document.querySelector("#contactForm");
-  form.addEventListener("submit", e => {
+  // 5. FORM SUBMISSION
+  document.querySelector("#contactForm").addEventListener("submit", (e) => {
     e.preventDefault();
-    const name = document.querySelector("#name").value;
-    alert(`Thanks for reaching out, ${name}! Your message has been sent.`);
-    form.reset();
+    alert("Order/Message received! We'll get the brew ready.");
   });
 });
