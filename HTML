@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Final Project</title>
+
+  <!-- CONNECTS CSS -->
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<header class="navbar">
+  <h1>MySite</h1>
+
+  <nav id="navMenu">
+    <a href="#" data-page="home">Home</a>
+    <a href="#" data-page="about">About</a>
+    <a href="#" data-page="contact">Contact</a>
+  </nav>
+
+  <button id="themeToggle">🌙</button>
+</header>
+
+<main>
+
+  <section id="home" class="page active">
+    <h2>Welcome</h2>
+    <p>This is a responsive website project.</p>
+
+    <h2>FAQ</h2>
+
+    <div class="faq-item">
+      <h3>Are pets allowed?</h3>
+      <p>Yes, on the patio.</p>
+    </div>
+
+    <div class="faq-item">
+      <h3>Do you offer Wi-Fi?</h3>
+      <p>Free Wi-Fi is available.</p>
+    </div>
+  </section>
+
+  <section id="about" class="page">
+    <h2>About</h2>
+    <p>This project demonstrates HTML, CSS, and JavaScript skills.</p>
+  </section>
+
+  <section id="contact" class="page">
+    <h2>Contact</h2>
+    <form id="contactForm">
+      <input type="text" placeholder="Name" required />
+      <input type="email" placeholder="Email" required />
+      <button type="submit">Submit</button>
+    </form>
+  </section>
+
+</main>
+
+<footer>
+  <p>© 2026 MySite</p>
+</footer>
+
+<!-- CONNECTS JS -->
+<script src="script.js"></script>
+</body>
+</html>
